@@ -9,6 +9,58 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid>
+		<StackPanel Background="lightGray" Margin="20" HorizontalAlignment="Center" VerticalAlignment="Top">
 
-    </Grid>
+
+			<TextBlock Text="Mortgage Calculator"
+           FontSize="24"
+           FontWeight="Bold"
+           HorizontalAlignment="Center"
+           Margin="0,0,0,20"/>
+
+
+			<StackPanel Orientation="Horizontal" Margin="5">
+				<TextBlock Text="Principal Borrowed:" Width="180" VerticalAlignment="Center"/>
+				<TextBox x:Name ="principalTextBox" Width="200"/>
+			</StackPanel>
+
+
+			<StackPanel Orientation="Horizontal" Margin="5">
+				<TextBlock Text="Years:" Width="180" VerticalAlignment="Center"/>
+				<TextBox x:Name="yearsTextBox" Width="200"/>
+			</StackPanel>
+
+
+			<StackPanel Orientation="Horizontal" Margin="5">
+				<TextBlock Text="Months:" Width="180" VerticalAlignment="Center"/>
+				<TextBox x:Name="monthsTextBox" Width="200"/>
+			</StackPanel>
+
+
+			<StackPanel Orientation="Horizontal" Margin="5">
+				<TextBlock Text="Annual Interest Rate %:" Width="180" VerticalAlignment="Center"/>
+				<TextBox x:Name="annualRateTextBox" Width="200"/>
+			</StackPanel>
+
+
+			<StackPanel Orientation="Horizontal" Margin="5">
+				<TextBlock Text="Monthly Interest Rate :" Width="180" VerticalAlignment="Center"/>
+				<TextBox x:Name="monthlyRateTextBox" Width="200" IsReadOnly="True"/>
+			</StackPanel>
+
+
+			<StackPanel Orientation="Horizontal" Margin="5">
+				<TextBlock Text="Monthly Repayment:" Width="180" VerticalAlignment="Center"/>
+				<TextBox x:Name="repaymentTextBox" Width="200" IsReadOnly="True"/>
+			</StackPanel>
+
+
+			<StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="20">
+				<Button x:Name="calculateButton" Content="Calculate" Width="100" Margin="10" Click="calculateButton_Click"/>
+				<Button x:Name="exitButton" Content="Exit" Width="100" Margin="10" Click="exitButton_Click"/>
+			</StackPanel>
+
+		</StackPanel>
+
+	</Grid>
 </Page>

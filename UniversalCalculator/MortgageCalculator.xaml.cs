@@ -26,5 +26,48 @@ namespace Calculator
 		{
 			this.InitializeComponent();
 		}
+
+		private void calculateButton_Click(object sender, RoutedEventArgs e)
+		{
+			try
+			{
+
+
+				double annualInterestRate = double.Parse(annualRateTextBox.Text) / 100;
+				double principal = double.Parse(principalTextBox.Text);
+				int years = int.Parse(yearsTextBox.Text);
+				int months = int.Parse(monthsTextBox.Text);
+				double monthlyInterestRate = annualInterestRate / 12.0;
+				int numberOfPayments = years * 12 + months;
+
+				double numerator = principal * Math.Pow(1 + monthlyInterestRate, numberOfPayments) * monthlyInterestRate;
+				double denominator = Math.Pow(1 + monthlyInterestRate, numberOfPayments) - 1;
+				double monthlyRepayment = numerator / denominator;
+
+
+				monthlyInterestRate = monthlyInterestRate * 0.01;
+				monthlyRateTextBox.Text = monthlyInterestRate.ToString();
+				repaymentTextBox.Text = monthlyRepayment.ToString();
+
+
+			}
+			catch (Exception ex)
+			{
+
+				ContentDialog errorDialog = new ContentDialog()
+				{
+					Title = "Input Error",
+					Content = "Please ensure all fields are filled with valid numbers.\n\n" + ex.Message,
+					CloseButtonText = "OK"
+				};
+				_ = errorDialog.ShowAsync();
+			}
+
+		}
+
+		private void exitButton_Click(object sender, RoutedEventArgs e)
+		{
+			Frame.Navigate(typeof(MainMenu));
+		}
 	}
 }
