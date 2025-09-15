@@ -19,13 +19,15 @@
 						   FontSize="24"
 						   FontWeight="Bold"
                        
-						   Margin="0,20,0,20" HorizontalAlignment="Center"/>
+						   Margin="20,20,0,20" HorizontalAlignment="Left"/>
 
 				<Button x:Name="mathCalculatorButton" Content="Math Calculator" Width="200" Height="40" Click="mathCalculatorButton_Click"/>
 				<Button x:Name="mortgageCalculatorButton" Content="Mortgage Calculator" Width="200" Height="40" Click="mortgageCalculatorButton_Click" />
 				<Button x:Name="currencyCalculatorButton"  Content="Currency Calculator" Width="200" Height="40" Click="currencyCalculatorButton_Click"/>
 				<Button x:Name="exitButton" Content="Exit" Width="200" Height="40" Click="exitButton_Click"/>
 
+				<Button x:Name="tripCalculatorButton" Content="trip calculator" Width="200" Height="40" Click="tripCalculatorButton_Click" />
+				<TextBlock x:Name="tripCalculatorTextBlock"  Width="500" Height="40" />
 			</StackPanel>
 		</StackPanel>
 	</Grid>
