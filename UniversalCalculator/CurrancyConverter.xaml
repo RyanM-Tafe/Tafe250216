@@ -8,7 +8,79 @@
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-    <Grid>
+	<Grid>
+		<StackPanel Background="lightGray" Margin="20" HorizontalAlignment="Center" VerticalAlignment="Top">
+			<TextBlock Text="Currency Conversion Calculator" FontSize="50" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,30,0,10"/>
 
-    </Grid>
+			<StackPanel Orientation="Horizontal" Margin="0,50,0,0">
+				<Grid Width="1500">
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition Width="33*" />
+						<ColumnDefinition Width="33*" />
+						<ColumnDefinition Width="33*" />
+					</Grid.ColumnDefinitions>
+				
+					<StackPanel Grid.Column="0" Orientation="Vertical">
+						<TextBlock Text="Amount $" FontSize="50" Margin="0,20,0,20" HorizontalAlignment="Center"/>
+
+						<TextBox x:Name="amount" PlaceholderText="Enter a number"  HorizontalAlignment="Center" Width="200"/>
+					</StackPanel>
+
+					<StackPanel Grid.Column="1" Orientation="Vertical">
+						<TextBlock Text="From" FontSize="50" Margin="0,20,0,20" HorizontalAlignment="Center"/>
+
+						<ComboBox x:Name="fromCurrency" HorizontalAlignment="Center" Width="200">
+							<ComboBoxItem Content="US Dollar"/>
+							<ComboBoxItem Content="Euro"/>
+							<ComboBoxItem Content="British"/>
+							<ComboBoxItem Content="Indian Rupee"/>
+						</ComboBox>
+
+					</StackPanel>
+
+					<StackPanel Grid.Column="2" Orientation="Vertical">
+						<TextBlock Text="To" FontSize="50" Margin="0,20,0,20" HorizontalAlignment="Center"/>
+
+						<ComboBox x:Name="toCurrency" HorizontalAlignment="Center" Width="200">
+							<ComboBoxItem Content="US Dollar"/>
+							<ComboBoxItem Content="Euro"/>
+							<ComboBoxItem Content="British"/>
+							<ComboBoxItem Content="Indian Rupee"/>
+						</ComboBox>
+					</StackPanel>
+				</Grid>
+
+			</StackPanel>
+
+			<StackPanel Orientation="Vertical" Margin="0,50,0,0">
+				<StackPanel Orientation="Horizontal" Margin="25">
+					<TextBlock x:Name="inputAmount" Width="180" VerticalAlignment="Center"/>
+				</StackPanel>
+
+				<StackPanel Orientation="Horizontal" Margin="25">
+					<TextBlock x:Name="outputResult" FontWeight="Bold" Width="180" VerticalAlignment="Center"/>
+				</StackPanel>
+
+				<StackPanel Orientation="Horizontal" Margin="25">
+					<TextBlock x:Name="outputFrom" Width="180" VerticalAlignment="Center"/>
+				</StackPanel>
+
+				<StackPanel Orientation="Horizontal" Margin="25">
+					<TextBlock x:Name="outputTo" Width="180" VerticalAlignment="Center"/>
+				</StackPanel>
+			</StackPanel>
+
+
+			<StackPanel Orientation="Vertical" Margin="0,50,0,0">
+				<StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="15">
+					<Button x:Name="calculateButton" Content="Calculate Currency" Click="calculateButton_Click"/>
+				</StackPanel>
+
+				<StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="15">
+					<Button x:Name="exitButton" Content="Exit" Click="exitButton_Click"/>
+				</StackPanel>
+			</StackPanel>
+
+		</StackPanel>
+	</Grid>
 </Page>
