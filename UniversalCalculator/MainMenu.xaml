@@ -24,7 +24,7 @@
 				<Button x:Name="mathCalculatorButton" Content="Math Calculator" Width="200" Height="40" Click="mathCalculatorButton_Click"/>
 				<Button x:Name="mortgageCalculatorButton" Content="Mortgage Calculator" Width="200" Height="40" Click="mortgageCalculatorButton_Click" />
 				<Button x:Name="currencyCalculatorButton"  Content="Currency Calculator" Width="200" Height="40" Click="currencyCalculatorButton_Click"/>
-				<Button x:Name="exitButton" Content="Exit" Width="200" Height="40"/>
+				<Button x:Name="exitButton" Content="Exit" Width="200" Height="40" Click="exitButton_Click"/>
 
 			</StackPanel>
 		</StackPanel>
